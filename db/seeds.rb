@@ -7,3 +7,18 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+7.times do |x|
+  case x + 1
+  when 1
+    suffix = "st"
+  when 2
+    suffix = "nd"
+  when 3
+    suffix = "rd"
+  else
+    suffix = "th"
+  end
+
+  Post.create(title: "Blog No. #{x+1}", body: "This is the #{x+1}#{suffix} post.")
+end

@@ -7,6 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+User.create(email: "admin@mail.com", password: "admin123", password_confirmation: "admin123")
+
 
 7.times do |x|
   case x + 1
@@ -20,5 +22,5 @@
     suffix = "th"
   end
 
-  Post.create(title: "Blog No. #{x+1}", body: "This is the #{x+1}#{suffix} post.")
+  Post.create(title: "Blog No. #{x+1}", body: "This is the #{x+1}#{suffix} post.", user_id: User.first.id)
 end
